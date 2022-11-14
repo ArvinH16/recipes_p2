@@ -1,0 +1,36 @@
+*{
+    margin: 0px;
+}
+
+body{
+    width: 800px;
+    margin: 0 auto;
+}
+
+nav{
+    height: 100px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: 100px;
+}
+
+.main_body{
+    border: 2px black solid;
+    padding: 10px 20px;
+}
+
+form > input{
+    width: 100%;
+}
+
+form > label, input{
+    display: block;
+    margin: 5px 0px;
+}
+
+input[type=submit]{
+    width: 10%;
+    background-color: black;
+    color: white;
+}

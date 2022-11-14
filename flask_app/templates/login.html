@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login registration Page</title>
+    <link rel="stylesheet" href=" {{ url_for('static', filename='style.css') }} ">
+</head>
+<body>
+    <nav>
+        <h1>Welcome to Recipe Share!</h1>
+    </nav>
+    <div class="main_body">
+        <form action="/register" method="post" class="register">
+            <h2>Register</h2>
+            {% with messages = get_flashed_messages(category_filter=['register']) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name">
+
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name">
+
+            <label for="email">Email:</label>
+            <input type="text" name="email">
+
+            <label for="password">Password:</label>
+            <input type="text" name="password">
+
+            <label for="pass_confrim">Confirm password:</label>
+            <input type="text" name="pass_confirm">
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <form action="/login" method="post" class="login">
+            <h2>Login</h2>
+            {% with messages = get_flashed_messages(category_filter=['login']) %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <label for="email" id="stack">email:</label>
+            <input id="stack" type="text" name="email">
+
+            <label id="stack" for="password">password:</label>
+            <input id="stack" type="text" name="password">
+
+            <input type="submit">
+        </form>
+        <a href="/logout">logout</a>
+    </div>
+    
+</body>
+</html>
